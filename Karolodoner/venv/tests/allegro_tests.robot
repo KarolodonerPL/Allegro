@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Test suite for Akkergo tests by Karol Odoner
+Documentation       Test suite for Allegro tests by Karol Odoner
 Resource            ../Lib/allegro_page_map.robot
 Library             SeleniumLibrary
 Library             REST    https://jsonplaceholder.typicode.com
@@ -21,7 +21,7 @@ Testing Endpoints
 
 *** Keywords ***
 Add Item To Basket
-    [Documentation]     Keyword for adding item in to the basked
+    [Documentation]     Keyword for adding item into the basket
     Click Button    ${add_to_cart_button}
     Wait Until Element Is Visible   ${close_button}    10s
     Click Element   ${close_button}
@@ -33,7 +33,7 @@ Check If Item Is In The Basked
     Click Element   ${go_to_busket_button}
     Wait Until Element Is Visible	${item_in_the_busket}    10s
     ${shopping_title} =   Get Text    ${item_in_the_busket}
-    Should Be Equal     ${object_title}     ${shopping_title}       Item was not added in to the basked
+    Should Be Equal     ${object_title}     ${shopping_title}       Item was not added into the basket
 
 Endpoint Post
     GET         /posts
@@ -70,7 +70,7 @@ Endpoint Comment
     Integer     response status           200
 
 Enter The Item Page
-    [Documentation]     Keyword which adding first item in to the basked and return item name
+    [Documentation]     Keyword which adding first item in to the basket and return item name
     sleep   5s
     Click Element   ${first_item}
     Wait Until Element Is Visible	${item_title}    10s
@@ -87,12 +87,12 @@ Look For Used Item More Expensive Then
     Wait Until Element Is Visible	${used_checkbox}     10s
     Click Element   ${used_checkbox}
     # sleep due to bug on Allegro page, When user click Używane and enter price for 'Price From' it can  reload
-    # and remove all price in that field or just partial what giving incorect results. Bug repeted manually.
+    # and remove all price in that field or just partial what giving incorect results. Bug was repeted manually.
     sleep   1s
     Input Text   ${price_from}  ${price}
 
 Open Allegro Page
-    [Documentation]     Openingn Chrome browser on Allegro Main page
+    [Documentation]     Opening Chrome browser on Allegro Main page
     ...                 Checking if there is pop up and if there is - closing it
     Open Browser    https://allegro.pl/     chrome
     Maximize Browser Window
