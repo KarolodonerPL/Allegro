@@ -7,7 +7,7 @@ Library             REST    https://jsonplaceholder.typicode.com
 Suite Setup     Set Page Objects For Robot
 
 *** Test Cases ***
-Check If Item Can be Added In To The Basked
+Check If Item Can be Added Into The Basket
     Open Allegro Page
     Look For Used Item More Expensive Then   ${200}
     ${object_title} =   Enter The Item Page
