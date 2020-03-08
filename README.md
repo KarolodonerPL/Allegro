@@ -18,3 +18,5 @@ Execution:
     4) Raport.html is crated in folder where comand is executed
     5) to execute single test add parametr -t test_name
 
+Git repository to clone:
+https://github.com/KarolodonerPL/Allegro.git
